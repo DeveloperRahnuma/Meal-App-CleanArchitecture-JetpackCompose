@@ -12,7 +12,7 @@ import javax.inject.Inject
 class MealSearchViewModel @Inject constructor(val getMealSearchListUseCase: GetMealSearchListUseCase): ViewModel() {
 
     val _mealSearchList = MutableStateFlow<MealSearchState>(MealSearchState())
-    val mealSearchList : StateFlow<MealSearchState> = _mealSearchList
+    //val mealSearchList : StateFlow<MealSearchState> = _mealSearchList
 
 
     fun searchMealList(s : String){

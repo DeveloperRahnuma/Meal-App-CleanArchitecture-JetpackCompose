@@ -42,12 +42,18 @@ fun MealSearchDataShow(
 //
 //
 //    }
-
-    coroutineScope.launch {
-        mealSearchViewModel.mealSearchList.collect {
-            it.data?.let { it1 -> designGrid(it1) }
+    val appData by mealSearchViewModel._mealSearchList.collectAsState()
+    appData.data.let {it->
+        if (it != null) {
+            designGrid(it)
         }
     }
+//    coroutineScope.launch {
+//
+//        mealSearchViewModel.mealSearchList.collect {
+//            it.data?.let { it1 -> designGrid(it1) }
+//        }
+//    }
 
 
 
